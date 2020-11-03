@@ -1,0 +1,47 @@
+# Debugger Input Script
+
+echo \n\n
+# put the breakpoint at the line 74 of the noob_assembly.asm file
+break 74
+run 
+set logging file debugger_output.txt
+set logging overwrite
+set logging on
+set prompt
+echo ----------------------------------- \n
+echo display variables \n
+echo \n
+echo bVar1 \n
+x/db &bVar1
+echo bVar2 \n
+x/db &bVar2
+echo bResult \n
+x/db &bResult
+echo \n
+echo ----------------------------------- \n
+echo wVar1 \n
+x/dh &wVar1
+echo wVar2 \n
+x/dh &wVar2
+echo wResult \n
+x/dh &wResult
+echo \n
+echo ----------------------------------- \n
+echo dVar1 \n
+x/dw &dVar1
+echo dVar2 \n
+x/dw &dVar2
+echo dResult \n
+x/dw &dResult
+echo \n
+echo ----------------------------------- \n
+echo qVar1 \n
+x/dg &qVar1
+echo qVar2 \n
+x/dg &qVar2
+echo qResult \n
+x/dg &qResult
+echo \n
+echo \n
+set logging off
+quit
